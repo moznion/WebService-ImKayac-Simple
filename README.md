@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/moznion/WebService-ImKayac-Simple.png?branch=master)](https://travis-ci.org/moznion/WebService-ImKayac-Simple)
 # NAME
 
 WebService::ImKayac::Simple - Simple message sender for im.kayac

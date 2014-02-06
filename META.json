@@ -57,5 +57,16 @@
       }
    },
    "release_status" : "unstable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/moznion/WebService-ImKayac-Simple/issues"
+      },
+      "homepage" : "https://github.com/moznion/WebService-ImKayac-Simple",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/moznion/WebService-ImKayac-Simple.git",
+         "web" : "https://github.com/moznion/WebService-ImKayac-Simple"
+      }
+   },
    "version" : "0.01"
 }
