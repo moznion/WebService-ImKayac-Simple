@@ -14,18 +14,20 @@ WebService::ImKayac::Simple - Simple message sender for im.kayac
     );
 
     $im->send('Hello!');
+    $im->send('Hello!', 'mailto:example@example.com'); # you can append handler to the message
 
 # DESCRIPTION
 
-WebService::ImKayac::Simple is the simple message sender for im.kayac.
+WebService::ImKayac::Simple is the simple message sender for im.kayac ([http://im.kayac.com/](http://im.kayac.com/)).
 
 # METHODS
 
-- WWW::NHKProgram::API->new()
+- WebService::ImKayac::Simple->new()
 
     Constructor. You can specify `user`, `password` and `type` through this method.
 
-    Essential arguments are changed according to the `type`.
+    Essential arguments are changed according to the `type`. `type` allows only
+    "password", "secret" or empty. Please refer to the following for details of each type.
 
     With no authentication:
 
@@ -55,13 +57,17 @@ WebService::ImKayac::Simple is the simple message sender for im.kayac.
 
     `$message` is required. It must be utf-8 string.
 
-    `handler` is optional. Please refer [http://im.kayac.com/#docs](http://im.kayac.com/#docs) if you wanna get details.
+    `$handler` is optional. Please refer [http://im.kayac.com/#docs](http://im.kayac.com/#docs) if you want to get details.
 
 # FOR DEVELOPERS
 
 Tests which are calling web API directly in `xt/webapi`. If you want to run these tests, please execute like so;
 
     $ IM_KAYAC_NONE_USER=__USER_NAME__ prove xt/webapi/00_none.t
+
+# SEE ALSO
+
+[AnyEvent::WebService::ImKayac](https://metacpan.org/pod/AnyEvent::WebService::ImKayac)
 
 # LICENSE
 
