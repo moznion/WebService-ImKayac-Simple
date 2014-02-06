@@ -77,15 +77,71 @@ __END__
 
 =head1 NAME
 
-WebService::ImKayac::Simple - It's new $module
+WebService::ImKayac::Simple - Simple message sender for im.kayac
 
 =head1 SYNOPSIS
 
     use WebService::ImKayac::Simple;
 
+    my $im = WebService::ImKayac::Simple->new(
+        type     => 'password',
+        user     => '__USER_NAME__',
+        password => '__PASSWORD__',
+    );
+
+    $im->send('Hello!');
+
 =head1 DESCRIPTION
 
-WebService::ImKayac::Simple is ...
+WebService::ImKayac::Simple is the simple message sender for im.kayac.
+
+=head1 METHODS
+
+=over 4
+
+=item * WWW::NHKProgram::API->new()
+
+Constructor. You can specify C<user>, C<password> and C<type> through this method.
+
+Essential arguments are changed according to the C<type>.
+
+With no authentication:
+
+    my $im = WebService::ImKayac::Simple->new(
+        user => '__USER_NAME__',
+    );
+
+With password authentication:
+
+    my $im = WebService::ImKayac::Simple->new(
+        type     => 'password',
+        user     => '__USER_NAME__',
+        password => '__PASSWORD__',
+    );
+
+With secret key authentication:
+
+    my $im = WebService::ImKayac::Simple->new(
+        type     => 'secret',
+        user     => '__USER_NAME__',
+        password => '__SECRET_KEY__',
+    );
+
+=item * $im->send($message, $handler)
+
+Send message.
+
+C<$message> is required. It must be utf-8 string.
+
+C<handler> is optional. Please refer L<http://im.kayac.com/#docs> if you wanna get details.
+
+=back
+
+=head1 FOR DEVELOPERS
+
+Tests which are calling web API directly in F<xt/webapi>. If you want to run these tests, please execute like so;
+
+    $ IM_KAYAC_NONE_USER=__USER_NAME__ prove xt/webapi/00_none.t
 
 =head1 LICENSE
 
