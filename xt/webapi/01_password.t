@@ -6,9 +6,9 @@ use WebService::ImKayac::Simple;
 
 use Test::More;
 
-my $user     = $ENV{IMKAYAC_PASSWORD_USER};
-my $password = $ENV{IMKAYAC_PASSWORD};
-plan skip_all => "IMKAYAC_PASSWORD_USER or IMKAYAC_PASSWORD is not given." if !$user || !$password;
+my $user     = $ENV{IM_KAYAC_PASSWORD_USER};
+my $password = $ENV{IM_KAYAC_PASSWORD};
+plan skip_all => "IM_KAYAC_PASSWORD_USER or IM_KAYAC_PASSWORD is not given." if !$user || !$password;
 
 my $im = WebService::ImKayac::Simple->new(
     type     => 'password',
