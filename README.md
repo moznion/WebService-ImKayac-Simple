@@ -55,7 +55,7 @@ WebService::ImKayac::Simple is the simple message sender for im.kayac ([http://i
 
     Send message.
 
-    `$message` is required. It must be utf-8 string.
+    `$message` is required. It must be utf-8 string or perl string.
 
     `$handler` is optional. Please refer [http://im.kayac.com/#docs](http://im.kayac.com/#docs) if you want to get details.
 

@@ -45,6 +45,7 @@
       "runtime" : {
          "requires" : {
             "Digest::SHA1" : "0",
+            "Encode" : "2.57",
             "Furl" : "0",
             "JSON" : "0",
             "perl" : "5.008005"
@@ -68,5 +69,5 @@
          "web" : "https://github.com/moznion/WebService-ImKayac-Simple"
       }
    },
-   "version" : "0.02"
+   "version" : "0.03"
 }
