@@ -2,6 +2,7 @@
 
 use strict;
 use warnings;
+use utf8;
 use WebService::ImKayac::Simple;
 
 use Test::More;
@@ -13,7 +14,7 @@ my $im = WebService::ImKayac::Simple->new(
     user => $user,
 );
 
-eval { $im->send("Hello!") };
+eval { $im->send("こんにちは") };
 ok !$@;
 
 done_testing;

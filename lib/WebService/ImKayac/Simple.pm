@@ -4,6 +4,7 @@ use strict;
 use warnings;
 use Carp;
 use Digest::SHA1 qw/sha1_hex/;
+use Encode qw/encode_utf8 decode_utf8/;
 use Furl;
 use JSON ();
 
@@ -43,6 +44,9 @@ sub send {
     my ($self, $message, $handler) = @_;
 
     croak '[ERROR] Message is required' unless $message;
+    eval { $message = decode_utf8($message) };
+    $message = encode_utf8($message);
+
     my $param = {message => $message};
 
     if (my $type = $self->{type}) {
@@ -139,7 +143,7 @@ With secret key authentication:
 
 Send message.
 
-C<$message> is required. It must be utf-8 string.
+C<$message> is required. It must be utf-8 string or perl string.
 
 C<$handler> is optional. Please refer L<http://im.kayac.com/#docs> if you want to get details.
 

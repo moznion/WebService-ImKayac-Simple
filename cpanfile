@@ -1,4 +1,5 @@
 requires 'Digest::SHA1';
+requires 'Encode', '2.57';
 requires 'Furl';
 requires 'JSON';
 requires 'perl', '5.008005';
