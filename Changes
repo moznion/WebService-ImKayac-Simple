@@ -2,6 +2,10 @@ Revision history for Perl extension WebService-ImKayac-Simple
 
 {{$NEXT}}
 
+0.02 2014-02-07T00:04:19Z
+
+    - Add error handling at http layer
+
 0.01 2014-02-06T13:43:47Z
 
     - original version

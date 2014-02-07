@@ -9,7 +9,7 @@ use JSON ();
 
 use constant IM_KAYAC_BASE_URL => 'http://im.kayac.com/api/post/';
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 sub new {
     my ($class, %arg) = @_;
