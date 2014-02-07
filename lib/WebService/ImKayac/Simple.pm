@@ -64,6 +64,10 @@ sub send {
         $param,
     );
 
+    unless ($res->is_success) {
+        croak "[ERROR] " . $res->status_line;
+    }
+
     my $json = JSON::decode_json($res->{content});
     if (my $error = $json->{error}) {
         croak "[ERROR] $error";
