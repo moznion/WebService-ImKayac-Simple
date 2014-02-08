@@ -21,7 +21,7 @@ sub new {
     my $password = '';
     my $type = $arg{type};
     if ($type) {
-        if ($type !~ /(?:password|secret)/) {
+        if ($type !~ /^(?:password|secret)$/) {
             croak "[ERROR] Invalid type: $type (type must be 'password' or 'secret')";
         }
 
