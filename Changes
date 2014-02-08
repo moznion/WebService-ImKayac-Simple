@@ -2,6 +2,10 @@ Revision history for Perl extension WebService-ImKayac-Simple
 
 {{$NEXT}}
 
+0.04 2014-02-08T04:24:08Z
+
+    - Fix the bug that allows invalid type name
+
 0.03 2014-02-07T01:58:14Z
 
     - Support perl string message
