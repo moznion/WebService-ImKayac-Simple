@@ -2,6 +2,10 @@ Revision history for Perl extension WebService-ImKayac-Simple
 
 {{$NEXT}}
 
+0.10 2014-03-23T06:29:11Z
+
+    - Support YAML file to configure
+
 0.04 2014-02-08T04:24:08Z
 
     - Fix the bug that allows invalid type name
