@@ -13,19 +13,31 @@ use constant IM_KAYAC_BASE_URL => 'http://im.kayac.com/api/post/';
 our $VERSION = '0.04';
 
 sub new {
-    my ($class, %arg) = @_;
+    my ($class, @arg) = @_;
 
-    my $user = $arg{user};
+    my $user;
+    my $password;
+    my $type;
+    if (scalar @arg == 1) {
+        require YAML::Tiny;
+        my $yaml_file = shift @arg;
+        my $conf = YAML::Tiny->read($yaml_file)->[0];
+        $user     = $conf->{user};
+        $type     = $conf->{type}     || '';
+        $password = $conf->{password} || '';
+    }
+    else {
+        my %arg = @arg;
+        $user     = $arg{user};
+        $type     = $arg{type}     || '';
+        $password = $arg{password} || '';
+    }
+
     croak '[ERROR] User name is required' unless $user;
-
-    my $password = '';
-    my $type = $arg{type};
     if ($type) {
         if ($type !~ /^(?:password|secret)$/) {
             croak "[ERROR] Invalid type: $type (type must be 'password' or 'secret')";
         }
-
-        $password = $arg{password};
         croak '[ERROR] Password is required' unless $password;
     }
 
