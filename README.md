@@ -51,6 +51,16 @@ WebService::ImKayac::Simple is the simple message sender for im.kayac ([http://i
             password => '__SECRET_KEY__',
         );
 
+    Also you can configure by YAML file:
+
+        my $im = WebService::ImKayac::Simple->new('path/to/config.yml');
+
+    Sample of YAML config file:
+
+        user: foo
+        password: bar
+        type: __TYPE__
+
 - $im->send($message, $handler)
 
     Send message.
